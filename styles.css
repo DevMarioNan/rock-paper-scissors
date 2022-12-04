@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Roboto:wght@400;500;700;900&family=VT323&display=swap');
+
+*{
+    margin: 0;
+    padding:0;
+}
+
+body{
+    font-family: 'Manrope', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'VT323', monospace;
+}
+
+.container{
+    width: 615px;
+}
+
+header{
+    background-color: #170312;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.main{
+    background-color: #33032F;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.choice{
+    width: 150px;
+    height: 150px;
+    border: 2px solid #A0ACAD;
+    border-radius: 10px;
+}
+
+.choices{
+    display: flex;
+    color:white;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+}
+
