@@ -21,7 +21,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 0;
+    padding: 12px 0;
     text-align: center;
 }
 
@@ -48,3 +48,49 @@ header{
     align-items: center;
 }
 
+.choices div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.buttons-section{
+    background-color: #531253;
+    height: 34.7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons button img{
+    width: 130px;
+    height: 130px;
+    pointer-events: none;
+}
+
+.buttons button{
+    background-color: #a0acad2d;
+    border: 2px solid #97D8B2;
+    border-radius: 20px;
+    padding: 5px 10px;
+    cursor:pointer;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-around;
+}
+
+footer{
+    text-align: center;
+    color:white;
+    background-color: black;
+
+}
+.score{
+    display: flex;
+    color: white;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
