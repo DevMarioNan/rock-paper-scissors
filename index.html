@@ -10,6 +10,12 @@
 </head>
 
 <body>
+    <div class="overlay hidden">
+        <div class="endGame">
+            <h1 id="title">player wins</h1>
+            <button id="restart">tryAgain?</button>
+        </div>
+    </div>
     <header>
         <div class="container">
             <h1>Rock Paper Scissors</h1>
@@ -19,7 +25,7 @@
         <div class="container">
             <div class="score">
                 <h2>score</h2>
-                <h3>0 - 0</h3>
+                <h3 id="score">0 - 0</h3>
             </div>
             <div class="choices">
                 <div class="yourChoice">
@@ -48,6 +54,8 @@
     <footer>
         <p>CopyRights &copy; Mario Nan 2022</p>
     </footer>
+
+
     <script src="script.js"></script>
 </body>
 

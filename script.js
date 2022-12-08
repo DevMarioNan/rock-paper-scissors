@@ -1,3 +1,7 @@
+//score
+let playerScore = 0;
+let computerScore = 0;
+
 //declaring instances of images
 const playerRockImg = document.createElement('img');
 playerRockImg.setAttribute('src','https://pbs.twimg.com/media/D8Kygw6XYAEeEg8.png')
@@ -42,14 +46,18 @@ const computer = document.querySelector('#computer');
 
 const buttons = document.querySelectorAll('button');
 
+//getting scoreboard
+const score = document.querySelector('#score');
+
 buttons.forEach((btn)=>{
     btn.addEventListener("click",(e)=>{
         deleteChildren();
         playerChoice = e.target.id;
-        
         player.append(playerImg[playerChoice]);
         calculatingComputerChoice();
         validation();
+        score.textContent = `${playerScore} - ${computerScore}`;
+        game();
     })
 })
 
@@ -67,13 +75,13 @@ const validation = ()=>{
     if(playerChoice === computerChoice){
         console.log("draw");
     }else{
-        if(playerChoice === 'rock' && computerChoice === 'paper')console.log('computer wins');
-        if(playerChoice === 'paper' && computerChoice === 'scissors')console.log('computer wins');
-        if(playerChoice === 'scissors' && computerChoice === 'rock')console.log('computer wins');
+        if(playerChoice === 'rock' && computerChoice === 'paper')computerScore++;
+        if(playerChoice === 'paper' && computerChoice === 'scissors')computerScore++;
+        if(playerChoice === 'scissors' && computerChoice === 'rock')computerScore++;
 
-        if(playerChoice === 'rock' && computerChoice === 'scissors')console.log('player wins');
-        if(playerChoice === 'scissors' && computerChoice === 'paper')console.log('player wins');
-        if(playerChoice === 'paper' && computerChoice === 'rock')console.log('player wins');
+        if(playerChoice === 'rock' && computerChoice === 'scissors')playerScore++;
+        if(playerChoice === 'scissors' && computerChoice === 'paper')playerScore++;
+        if(playerChoice === 'paper' && computerChoice === 'rock')playerScore++;
     }
 }
 
@@ -90,5 +98,23 @@ const deleteChildren = ()=>{
     }
 }
 
+const overlay = document.querySelector('.overlay');
+const title = document.querySelector('#title');
+const restartBtn = document.querySelector('#restart');
 
 
+//game function
+const game = ()=>{
+    if(playerScore === 5){
+        overlay.classList.toggle('hidden');
+        title.textContent = 'Player Wins'
+    }
+    if(computerScore === 5){
+        overlay.classList.toggle('hidden');
+        title.textContent = 'Computer Wins'
+    }
+}
+
+restartBtn.addEventListener('click',()=>{
+    location.reload();
+})
